@@ -13,13 +13,13 @@ module.exports = function( dataDir = "./data" ) {
 
 	const mongo = new ComfyMongo();
 
-	var mongoPath = "mongodb\\win\\mongod.exe";
+	var mongoPath = "";
 	switch( process.platform ) {
 		case "win32": // Windows
-			mongoPath = "mongodb\\win\\mongod.exe";
+			mongoPath = __dirname + "\\mongodb\\win\\mongod.exe";
 			break;
 		case "darwin": // OSX
-			mongoPath = "mongodb/mac/mongod";
+			mongoPath = __dirname + "/mongodb/mac/mongod";
 			break;
 		default:
 			throw new Error( "Unsupported Platform: " + process.platform );
