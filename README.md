@@ -24,16 +24,6 @@ ComfyMongo.on( "ready", () => {
 });
 ```
 
-## MongoDB Version ##
-
-ComfyMongoDB currently runs MongoDB Community Edition v4.0.10
-
-## Connection ##
-
-The MongoDB server will start on port `27017` and can be connected to with the url: `mongodb://localhost:27017`
-
-For an example connection, take a look at `example.js`!
-
 ## Events ##
 
 Currently, the MongoDB events available are:
@@ -50,6 +40,16 @@ Currently, the MongoDB events available are:
 ## Supported Platforms ##
 
 ComfyMongoDB currently works in Windows and Mac/OSX.
+
+## MongoDB Version ##
+
+ComfyMongoDB currently runs MongoDB Community Edition v4.0.10
+
+## Connection ##
+
+The MongoDB server will start on port `27017` and can be connected to with the url: `mongodb://localhost:27017`
+
+For an example connection, take a look at `example.js`!
 
 ## How to Specify Your Own Database Directory ##
 
