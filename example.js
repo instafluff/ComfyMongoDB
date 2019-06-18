@@ -1,7 +1,7 @@
 const mongo = require( "./index" )(); // Note: Normally this would be "comfy-mongo"
 
-mongo.on( "output", ( err ) => {
-	// console.log( "Output:", err );
+mongo.on( "output", ( data ) => {
+	// console.log( "Output:", data );
 });
 
 mongo.on( "error", ( err ) => {
