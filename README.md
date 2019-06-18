@@ -1,7 +1,7 @@
 # ComfyMongoDB
 Easiest way to setup MongoDB! Run a full-fledged MongoDB server with one line of code. No download or setup. Just, `require("comfy-mongo")();`
 
-For those of us that don't want to download and install MongoDB on the computer or want a self-contained version inside a limited directory, **ComfyMongoDB** lets you start up a full MongoDB service ***SUPER EASILY*** in just one line of code.
+For those of us that don't want to download and install MongoDB on the computer or for those who need a self-contained version inside a limited directory, **ComfyMongoDB** lets you start up a full MongoDB service ***SUPER EASILY*** in just one line of code.
 
 ## Instafluff ##
 > *For more coding fun like this Comfy MongoDB Module, come and hang out with us at the Comfiest Corner on Twitch!*
