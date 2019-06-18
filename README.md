@@ -15,14 +15,35 @@ For those of us that don't want to download and install MongoDB on the computer 
 ```
 npm install comfy-mongo --save
 ```
-
 2. Start MongoDB and listen for events
 ```javascript
 var ComfyMongo = require("comfy-mongo")();
 ComfyMongo.on( "ready", () => {
-  console.log( "MongoDB is ready!" );
+	console.log( "MongoDB is ready!" );
 });
 ```
+3. Connect and use MongoDB
+```javascript
+var ComfyMongo = require("comfy-mongo")();
+ComfyMongo.on( "ready", () => {
+	console.log( "MongoDB is ready!" );
+	connectToMongoDB( "mongodb://localhost:27017" );
+});
+
+const MongoClient = require('mongodb').MongoClient;
+function connectToMongoDB( url ) {
+	MongoClient.connect( url, { useNewUrlParser: true }, ( err, client ) => {
+		console.log("Connected successfully to server");
+		client.close();
+	});
+}
+```
+
+## Connecting to MongoDB ##
+
+The MongoDB server will start on port `27017` and can be connected to with the url: `mongodb://localhost:27017`
+
+For an example connection, take a look at `example.js`!
 
 ## Events ##
 
@@ -44,12 +65,6 @@ ComfyMongoDB currently works in Windows and Mac/OSX.
 ## MongoDB Version ##
 
 ComfyMongoDB currently runs MongoDB Community Edition v4.0.10
-
-## Connection ##
-
-The MongoDB server will start on port `27017` and can be connected to with the url: `mongodb://localhost:27017`
-
-For an example connection, take a look at `example.js`!
 
 ## How to Specify Your Own Database Directory ##
 
