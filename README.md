@@ -24,6 +24,10 @@ ComfyMongo.on( "ready", () => {
 });
 ```
 
+## Version ##
+
+ComfyMongoDB currently runs MongoDB Community Edition v4.0.10
+
 ## Connection ##
 
 The MongoDB server will start on port `27017` and can be connected to with the url: `mongodb://localhost:27017`
