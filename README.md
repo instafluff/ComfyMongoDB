@@ -24,7 +24,7 @@ ComfyMongo.on( "ready", () => {
 });
 ```
 
-## Version ##
+## MongoDB Version ##
 
 ComfyMongoDB currently runs MongoDB Community Edition v4.0.10
 
