@@ -21,6 +21,9 @@ module.exports = function( dataDir = "./data" ) {
 		case "darwin": // OSX
 			mongoPath = __dirname + "/mongodb/mac/mongod";
 			break;
+		case "linux": // Linux
+			mongoPath = __dirname + "/mongodb/linux/mongod";
+			break;
 		default:
 			throw new Error( "Unsupported Platform: " + process.platform );
 	}
