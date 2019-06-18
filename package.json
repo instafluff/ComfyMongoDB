@@ -28,8 +28,8 @@
     "url": "https://github.com/instafluff/ComfyMongoDB/issues"
   },
   "homepage": "https://github.com/instafluff/ComfyMongoDB#readme",
-  "dependencies": {
-    "mongodb": "^3.2.7",
-    "save-dev": "^2.0.0"
+  "dependencies": {},
+  "devDependencies": {
+    "mongodb": "^3.2.7"
   }
 }
