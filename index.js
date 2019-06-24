@@ -47,6 +47,7 @@ module.exports = function( dataDir = "./data" ) {
 		mongo.emit( "exit", code );
 	});
 
+	process.on( "SIGINT", () => mongoProc.kill( "SIGINT" ) );
 	process.on( "exit", () => mongoProc.kill( "SIGINT" ) );
 
 	return mongo;
