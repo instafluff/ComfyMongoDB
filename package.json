@@ -28,7 +28,9 @@
     "url": "https://github.com/instafluff/ComfyMongoDB/issues"
   },
   "homepage": "https://github.com/instafluff/ComfyMongoDB#readme",
-  "dependencies": {},
+  "dependencies": {
+    "tree-kill": "^1.2.1"
+  },
   "devDependencies": {
     "mongodb": "^3.2.7"
   }

@@ -1,4 +1,5 @@
 const fs = require('fs');
+const kill = require('tree-kill');
 const spawn = require("child_process").spawn;
 const EventEmitter = require('events');
 class ComfyMongo extends EventEmitter {};
@@ -28,7 +29,7 @@ module.exports = function( dataDir = "./data" ) {
 			throw new Error( "Unsupported Platform: " + process.platform );
 	}
 
-	const mongoProc = spawn( mongoPath, [ "-dbpath", dataDir ], {
+	let mongoProc = spawn( mongoPath, [ "-dbpath", dataDir ], {
 		shell: true
 	});
 
@@ -44,11 +45,26 @@ module.exports = function( dataDir = "./data" ) {
 	});
 
 	mongoProc.on( "close", ( code ) => {
+		mongo.emit( "close", code );
+	});
+
+	mongoProc.on( "exit", ( code ) => {
 		mongo.emit( "exit", code );
 	});
 
-	process.on( "SIGINT", () => mongoProc.kill( "SIGINT" ) );
-	process.on( "exit", () => mongoProc.kill( "SIGINT" ) );
+	mongo.shutdown = () => {
+		if( mongoProc ) {
+			kill( mongoProc.pid );
+			mongoProc = null;
+		}
+	};
+
+	process.on( "beforeExit", mongo.shutdown );
+	process.on( "SIGINT", mongo.shutdown );
+	process.on( "SIGTERM", mongo.shutdown );
+	process.on( "SIGBREAK", mongo.shutdown );
+	process.on( "SIGHUP", mongo.shutdown );
+	process.on( "uncaughtException", mongo.shutdown );
 
 	return mongo;
 }

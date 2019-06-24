@@ -8,6 +8,10 @@ mongo.on( "error", ( err ) => {
 	console.log( "Error:", err );
 });
 
+mongo.on( "close", ( code ) => {
+	console.log( "Close:", code );
+});
+
 mongo.on( "exit", ( code ) => {
 	console.log( "Exit:", code );
 });
@@ -32,6 +36,7 @@ mongo.on( "ready", async () => {
 		insertDocuments( db, ( result ) => {
 			console.log( result );
 			client.close();
+			mongo.shutdown();
 		});
 	});
 
