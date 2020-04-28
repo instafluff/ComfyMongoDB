@@ -21,12 +21,12 @@ module.exports = function( dataDir = "./data" ) {
 			// mongoPath = __dirname + "/node_modules/.bin/mongo-win";
 			break;
 		case "darwin": // OSX
-			// mongoPath = __dirname + "/mongodb/mac/mongod";
-			mongoPath = __dirname + "/node_modules/.bin/mongo-mac";
+			mongoPath = __dirname + "/mongodb/mac/mongod";
+			// mongoPath = __dirname + "/node_modules/.bin/mongo-mac";
 			break;
 		case "linux": // Linux
-			// mongoPath = __dirname + "/mongodb/linux/mongod";
-			mongoPath = __dirname + "/node_modules/.bin/mongo-linux";
+			mongoPath = __dirname + "/mongodb/linux/mongod";
+			// mongoPath = __dirname + "/node_modules/.bin/mongo-linux";
 			break;
 		default:
 			throw new Error( "Unsupported Platform: " + process.platform );

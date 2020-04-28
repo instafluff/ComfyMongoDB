@@ -39,6 +39,19 @@ function connectToMongoDB( url ) {
 }
 ```
 
+### Running MongoDB Globally ###
+
+If you would simply like to run an instance of MongoDB, you can install ComfyMongoDB globally and run a CLI command.
+
+1. Install `comfy-mongo` globally
+```
+npm install -g comfy-mongo
+```
+2. Start MongoDB from console
+```
+comfy-mongo
+```
+
 ## Connecting to MongoDB ##
 
 The MongoDB server will start on port `27017` and can be connected to with the url: `mongodb://localhost:27017`
